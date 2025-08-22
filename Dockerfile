@@ -7,4 +7,4 @@ WORKDIR /app
 COPY requirements.txt /tmp/requirements.txt
 RUN pip install -r /tmp/requirements.txt
 
-CMD ["python", "-m", "http.server", "8000"]
+CMD ["uvicorn", "-m", "http.server", "8000"]
