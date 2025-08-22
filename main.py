@@ -8,4 +8,4 @@ def read_index():
     return {"hello": "world Yaganum testing the upload and the sync yusygduycffvd!!"}
 
 def health_check():
-    return {"status": "healthy"}
+    return {"status": "healthyyy"}
