@@ -1,4 +1,4 @@
-FROM uvicorn:latest
+FROM python:3.13.4-slim-bullseye
 LABEL authors="godson"
 #test
 #ENTRYPOINT ["top", "-b"]
@@ -9,4 +9,4 @@ RUN pip install -r /tmp/requirements.txt
 
 #CMD ["uvicorn", "-m", "http.server", "8000"]
 
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "main.py:app", "--host", "0.0.0.0", "--port", "8000"]
