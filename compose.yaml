@@ -1,0 +1,24 @@
+services:
+  app:
+    image: python
+
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    ports:
+      - 8080:8000
+    environment:
+      - PORT= 8000
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+    volumes:
+       - ./:/app
+    develop:
+      watch:
+        - action: rebuild
+          path: borderless/requirements.txt
+        - action: rebuild
+          path: borderless/Dockerfile
+        - action: sync+restart
+          path: borderless/
+          target: /app
