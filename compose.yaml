@@ -9,16 +9,16 @@ services:
     ports:
       - 8000:8000
 
-    command: uvicorn main:app --host 0.0.0.0 --port 8000
+    #command: uvicorn main:app --host 0.0.0.0 --port 8000
 
     volumes:
        - ./:/app
-    develop:
-      watch:
-        - action: rebuild
-          path: borderless/requirements.txt
-        - action: rebuild
-          path: borderless/Dockerfile
-        - action: sync+restart
-          path: borderless/
-          target: /app
+#    develop:
+#      watch:
+#        - action: rebuild
+#          path: borderless/requirements.txt
+#        - action: rebuild
+#          path: borderless/Dockerfile
+#        - action: sync+restart
+#          path: borderless/
+#          target: /app

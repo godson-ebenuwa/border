@@ -1,4 +1,4 @@
-FROM python:latest
+FROM uvicorn:latest
 LABEL authors="godson"
 #test
 #ENTRYPOINT ["top", "-b"]
